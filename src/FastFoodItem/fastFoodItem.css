@@ -1,0 +1,13 @@
+.card__placeholder {
+  height: 270px;
+  animation: image_loading 1s linear infinite alternate;
+}
+
+@keyframes image_loading {
+  0% {
+    background: hsl(200, 20%, 80%);
+  }
+  100% {
+    background: hsl(200, 20%, 95%);
+  }
+}

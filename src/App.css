@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+body {
+  overflow-y: scroll;
+}
+
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 100;
+  src: url("assets/fonts/Vazirmatn-Thin.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 200;
+  src: url("assets/fonts/Vazirmatn-ExtraLight.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 300;
+  src: url("assets/fonts/Vazirmatn-Light.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 400;
+  src: url("assets/fonts/Vazirmatn-Medium.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 500;
+  src: url("assets/fonts/Vazirmatn-Regular.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 600;
+  src: url("assets/fonts/Vazirmatn-SemiBold.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 700;
+  src: url("assets/fonts/Vazirmatn-Bold.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 800;
+  src: url("assets/fonts/Vazirmatn-ExtraBold.woff2");
+}
+@font-face {
+  font-family: Vazirmatn;
+  font-weight: 900;
+  src: url("assets/fonts/Vazirmatn-Black.woff2");
+}
+* {
+  font-family: Vazirmatn;
+}
+.wrapper {
+  min-height: 100vh;
+}
+
+.fade-in-out {
+  opacity: 0;
+  animation: fade-out 1s ease-in forwards;
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-horiz {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.fade-in-horiz {
+  animation: fade-in-horiz 0.8s ease forwards;
+}
+.card {
+  opacity: 0;
+}
+
+#hamburger:checked + ul label {
+  transform: rotate(135deg);
+}
+#hamburger:checked + ul label::after,
+#hamburger:checked + ul label::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#hamburger:checked + ul {
+  width: 100% !important;
+  padding-right: 20px;
+}
+#hamburger:checked ~ div {
+  width: 0% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0;
+}
+
+.hamburger {
+  background: #000;
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  background: #000;
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  position: absolute;
+}
+.hamburger::after {
+  top: 8px;
+}
+
+.hamburger::before {
+  top: -8px;
+}
